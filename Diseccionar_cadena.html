@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Catalin Mazarache">
+    <title>Cookie 1</title>
+<!--
+Hacer un programa que:
+-Contenga una variable cuyo contenido sea "variable1=valo1;variable2=valor2; . . . ;variablen=valorn".
+-Extraiga las subcadenas separadas por el carácter ";".
+-Para cada subcadena, separe el nombre de la variable de su valor y visualice ambos por separado.
+-->
+    <script>
+        /*
+    function readCookie(name) {
+
+    return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + name.replace(/[\-\.\+\*]/g, "\\$&") + 
+    "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
+
+    }
+
+    document.cookie = "variable1= " + encodeURIComponent("valor1"); 
+    var mi_cookie=readCookie("variable1");
+    alert("La variable1 es " + mi_cookie);
+    document.cookie = "variable2= " + encodeURIComponent("valor2"); 
+    var mi_cookie2=readCookie("variable2");
+    alert("La variable2 es " + mi_cookie2);
+    */
+    
+
+    /*
+    function readCookie(name) {
+
+        var nameEQ = name + "="; 
+        var ca = document.cookie.split(';');
+
+        for(var i=0;i < ca.length;i++) {
+
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) {
+            return decodeURIComponent( c.substring(nameEQ.length,c.length) );
+        }
+
+        }
+
+        return null;
+
+        }
+
+        
+        document.cookie = "variable1=" + encodeURIComponent( "valor1" );
+
+        
+        var miCookie = readCookie( "variable1" );
+
+        
+        alert( miCookie );
+        */
+
+        
+            </script>    
+
+</head>
+<body>
+    <script>
+
+
+        
+    </script>   
+</body>
+</html>

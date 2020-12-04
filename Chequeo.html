@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!---Si una cadena que se introduce por teclado es una a, después cualquier carácter y otra letra minúscula-->
+<!--8 números + mayúscula-->
+<!--letra + 7 números + letra-->
+<!--Año,mes y el día-->
+<!--Vamos al mes y que sea de 12 meses, y los días de 30,31-->
+    <meta charset="UTF-8">
+    <meta name="author" content="Catalin Mazarache">
+    <title>Chequear</title>
+
+    <script>
+         var mi_cadena = prompt("Escribe una cadena");
+
+        function chequear (cadena){
+            //var expReg = new RegExp("^a.a$","g");
+            //var expReg = new RegExp("^a[.]a$","g");//de esta forma consigo que el carácter sea un punto
+
+            /*8 números + mayúscula*/
+            //var expReg = new RegExp("^[0-9]{8}[A-Z]$","g");
+
+            /*letra + 7 números + letra*/
+            //var expReg = new RegExp("^[A-Z][0-9]{7}[A-Z]$","g");
+
+            /*Año/mes/dia*/
+            //var expReg = new RegExp("^[0-9]{4}[/][0-9]{1,2}[/][0-9]{1,2}$","g");
+            
+
+            /*Vamos al mes y que sea de 12 meses, y los días de 30,31*/
+            var expReg = new RegExp("^[0-9]{4}[/][0-9]{1,2}[/][0-9]{1,2}$","g");
+            // /^[0-9]{4}\/[0-9]{2}\/[0-9]{2}$/
+            //Otra forma de usarlo es var expReg= / /g y sin comillas
+            if(expReg.test(cadena)){
+                return "Bien";
+            }else{
+                return "Mal";
+            }
+        }
+
+        alert(chequear(mi_cadena));
+
+
+    </script>
+</head>
+<body>
+	<script>
+		
+	</script>
+</body>
+</html>

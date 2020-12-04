@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Catalin Mazarache">
+    <title>Formulario con submit</title>
+<!---
+En el servidor chequear que sea menor de 140 
+De tal forma que cuando pulsemos enviar chequear que la edad es menor de 140, si es así lo envía.
+Si es 18 indicamos que es mayor de edad, sino indicar que es menor de edad
+-->
+    <script>
+
+        
+
+     
+    </script>    
+</head>
+<body>
+  
+    <form action="comprobar_edad.php" method="GET" onsubmit="return ">
+        <label for="Edad"> Edad </label>>
+        <input type="number" name="edad" id="Edad">
+    </form>
+
+
+    <script>
+        function comprobacion(){
+            if($_GET["edad"]){
+                
+            }
+        }
+    </script>  
+
+</body>
+</html> 

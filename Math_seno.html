@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!--For con el seno de 0 a 400 y mostrarlos con un document.write--->
+    <meta charset="UTF-8">
+    <meta name="author" content="Catalin Mazarache">
+    <title>Math</title>
+
+    <script>
+     /*
+    var i;
+    var total=400;
+    for(i=0;i<=total;i++){
+        //document.write(i + " grados= " + Math.sin(i/60) + " rad <br>");
+        //document.write(i + " grados= " + Math.sin(Math.PI*i/60) + " rad <br>");
+        document.write(i + " grados= " + Math.abs(Math.sin(Math.PI*i/60)) + " rad <br>");
+    }
+
+    */
+
+    //Si me daban un segmento entre -1 y 1, Trasladarlo para que me de valores entre 0 y 1,
+    //tengo que multiplicarlo por 1/2 o dividirlo entre 2
+    var i;
+    var total=400;
+    for(i=0;i<=total;i++){
+        window.document.write(i + " grados= " + Math.abs(((Math.sin(Math.PI*i/60))*0.5)+0.5) + " rad <br>");
+    }
+
+
+  </script>
+</head>
+<body>
+	<script>
+		
+	</script>
+</body>
+</html>
+

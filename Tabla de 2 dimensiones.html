@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!---Hacer un programa que permita:
+1.Recoger el número de mes, el día y los litros llovidos hasta que no se desee introducir más. 
+Los meses y días podrán estar repetidos.
+2.Mostrar los nombres de los meses con el total de litros llovidos.
+3.Mostrar el día más lluvioso en la forma: "El día más lluvioso ha sido el 7 de Marzo".
+4.Mostrar el nombre de los meses ordenados descendentemente por número de litros llovidos. 
+Este apartado debe hacerse en primer lugar sin usar objetos (solo tablas) 
+y en segundo lugar haciendo uso de objetos que contengan el nombre del mes y el total de litros.--->
+		<meta charset="UTF-8">
+		<meta name="author" content="Catalin Mazarache">
+		<title>Tabla de 2 dimensiones</title>
+			<script>
+            var total=new Array();
+            var mas=false; 
+            var f;
+            var c;
+            var datos=new Array();
+            var dia=0;
+            var meses=new Array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"); 
+            
+            for(f=0;f<31;f++){
+                datos[f]=new Array();
+                for(c=0;c<12;c++){
+                    datos[f][c]=0;
+                }
+            }
+          
+
+             do{
+
+            var dia=parseInt(prompt("Introduce un día"));
+            var mes=parseInt(prompt("Introduce un mes"));
+            var cant=parseInt(prompt("Introduce los litros"));
+
+            datos[mes-1][dia-1] +=cant;
+            mas=confirm("mas datos?");
+
+             }while(mas);
+
+
+             for(f=0;f<datos.length;f++){
+                
+                for(c=0;c<datos[f].length;c++){
+                    console.log(datos[f][c]);
+                }
+
+                document.write("<br>");
+            }
+
+
+
+
+            
+             for(f=0;f<31;f++){//totalizamos la tabla para el 4 apartado
+
+                total
+                    total[f]=0
+                    for(c=0;c<12;c++){
+                        total[f]=datos[f][c];
+                    }
+             }
+             for(f=0;f<31;f++){//Sacamos el mes con su total
+                 document.write(meses[f] + "" + total[f]);
+             }
+
+             //con dos for y un if(datos[f][c]>mayor) averiguas 
+             for(f=0;f<31;f++){
+                 for(c=0;c<12;c++){
+                     if(datos[f][c]>mayor){
+                        mayor=datos[f][c];
+                        f.aux=f;
+                        c.aux=c;
+                     }
+               
+                 }
+           
+             }
+           
+             document.write(c.aux+1 +  meses[f.aux]);
+
+             //Para el 4 tengo que ordenar ambas tablas  
+                     
+             function Meses_total(m,t){
+                this.mes=m;
+                this.total=t;
+            }
+            var total=new Array();
+            var meses=new Array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+            for(c=0;c<12;c++){
+                totales[c]=new Meses.total(c);
+                totales[c].mes=meses[c];
+                totales[c].total=0;
+                totales[c]=new Meses_total(meses[c],0);//esta línea hace lo mismo que las tres anteriores
+            }
+            totales.sort(function(a,b){return b.total-a.total});
+            for(c=0;c<12;c++){
+                document.write(totales[c].mes + " : " + totales[c].total + "<br>");
+            }
+            </script>
+            
+</head>
+<body>
+
+</body>
+</html>

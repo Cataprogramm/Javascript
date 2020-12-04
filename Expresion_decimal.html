@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!--
+Hacer un programa que pida un dato y muestre la cadena “Es un numero decimal” o “No es un número decimal” según corresponda, haciendo uso de una expresión regular. Los números decimales tienen las siguientes características:
+
+–	Pueden llevar un signo “+” o ¨-” al principio.
+–	Tienen una serie de uno o más números.
+–	Pueden tener parte decimal, que consiste en:
+–	Una coma o un punto.
+–	Una serie de uno o más números.
+-->
+    <meta charset="UTF-8">
+    <meta name="author" content="Catalin Mazarache">
+    <title>Expresion decimal</title>
+   
+        <script>
+            var numero=prompt("Introduce un numero decimal");
+
+            function decimal(str1){
+                var expresion=new RegExp("^[+-]?\d+([,.]\d+)?$","g");
+                /^[+-]?\d+([,.]\d+)?$/
+                if(expresion.test){
+                    return str1 + " es un numero decimal ";
+                }else{
+                    return str1 + " no es un número decimal ";
+                }
+            }
+            alert(decimal(numero));
+
+
+
+
+
+          
+        </script>
+</head>
+<body>
+	<script>
+		
+	</script>
+</body>
+</html>

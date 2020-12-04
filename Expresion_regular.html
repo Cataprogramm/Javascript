@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!--Un programa que nos permita poner como expresion regular
+y usando el metodo test() me funciona el chequeo de la cadena que he introducido-->
+    <meta charset="UTF-8">
+    <meta name="author" content="Catalin Mazarache">
+    <title>Expresión regular</title>
+   
+        <script>
+            function chequear(str1){
+                var expresion=new RegExp("^A3C","g");// Si no ponemos el gorrito acepta un número delante
+                if(expresion.test(str1)){
+                    return str1 + (" está bien");
+
+                }else{
+                    return str1 + (" está mal");
+                }
+            }
+            var cadena = "";
+            cadena=prompt("Introduzca una cadena");
+            alert(chequear(cadena));
+
+            //"^[ABab]3r$" lo que hay entre corchetes se corresponde con un caracter
+            //"^[0-9]" el primer caracter, un número el resto da igual
+            //"^[a-zA-Z]" se corresponde con una letra mayúscula y otra minúscula
+            // x|y para que el carácter uno u otro
+
+
+
+        </script>
+</head>
+<body>
+	<script>
+		
+	</script>
+</body>
+</html>

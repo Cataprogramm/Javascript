@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!---La clase Alumno tendra que tener definida la propiedad persona cuyo contenido sera el de la clase Persona, con las propiedades nota_dwec y una propiedad nota_dwes.
+     El metodo media tiene que calcular la media y devolver la nota media de las notas. Creamos el Alumno,con sus notas---->
+		<meta charset="UTF-8">
+		<meta name="author" content="Catalin Mazarache">
+		<title>Alumno</title>
+			<script>
+            function Alumno(mi_persona,nDWES,nDWEC){
+                this.persona=mi_persona;
+                this.nota_dwes=nDWES;
+                this.nota_dwec=nDWEC;
+                this.media=fnMedia;
+            }
+
+            function fnMedia(){
+                with(this){
+                    var nota=(nota_dwes+nota_dwec)/2;
+                    return nota;
+                }
+            }
+
+
+            var mi_nombre=prompt("Introduce un nombre","Catalin");
+            var mi_edad= parseInt(prompt("Introduce una edad",27));
+            var mi_persona=new Persona(mi_nombre,mi_edad);
+            var mi_notaDWES=parseInt(prompt("Introduce una nota de DWES",5));
+            var mi_notaDWEC=parseInt(prompt("Introduce una nota de DWEC",7));
+            
+            var mi_alumno=new Alumno(mi_persona,mi_notaDWES,mi_notaDWEC);
+
+            var mi_alumno_2=new Alumno();
+            
+            mi_alumno_2.persona.nombre=mi_alumno.persona.nombre;
+            mi_alumno_2.persona.edad=mi_alumno.persona.edad;
+            mi_alumno_2.persona.nDWEC=mi_alumno.persona.nota_dwec;
+            mi_alumno_2.persona.nDWES=mi_alumno.persona.nota_dwes;
+            
+    
+
+            mi_media=mi_alumno.media();
+
+            alert(mi_media);
+            alert(mi_alumno.persona.nombre);
+            alert(mi_alumno.persona.envejecer());
+            alert(mi_persona.nombre);
+          
+
+
+            //De esta forma se define una clase
+			 function Persona(txtNombre,nEdad){//parametros 
+				this.nombre=txtNombre;//Esta propiedad con el this hace referencia a la funcion Persona
+				this.edad=nEdad;//Otra forma sería poner: nombredelaFuncion.propiedad; Persona.edad=nEdad;
+                this.envejecer=fnEnvejecer;
+			
+             }
+            
+             function fnEnvejecer(){
+                   //if(this.edad>20){ this.edad=this.edad-10;}
+                     with(this){
+                        if(edad>20){
+                            edad-=10; 
+                        }  
+                    }     
+                }
+                
+               var tabla=new Array();
+                tabla.sort(function(a,b){return a.edad-b.edad});//a y b son dos objetos, los ordena de forma ascendente
+                //tabla es un objeto de la clase Array
+               
+			</script>
+</head>
+<body>
+
+</body>
+</html>

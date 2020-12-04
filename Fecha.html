@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!---Fecha--->
+		<meta charset="UTF-8">
+		<meta name="author" content="Catalin Mazarache">
+		<title>Fecha</title>
+			<script>
+			/*	 var miFecha = new Date();
+				var msDia = 24 * 60 * 60 * 1000;
+				with (miFecha) {
+					document.write ("Hoy es................: ");
+					document.write (getDate() + "/" + getMonth() + "/" + getFullYear() + "<br>");
+				
+					setTime(getTime() + 90 * msDia);
+					document.write ("Dentro de 90 dias será: ");
+					document.write (getDate() + "/" + getMonth() + "/" + getFullYear());
+             }
+			 */
+			 /*
+			 //Dentro de 90 días
+			 var meses=new Array("Enero","Febrero","Marzo","Abril","Mayo","Junio",
+			 "Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+			 var hoy=new Date();
+			 var milis_hoy=hoy.getTime();
+			 var milis_90dias= milis_hoy + (1000*60*60*24*90);
+			hoy.setTime(milis_90dias);
+			document.write(hoy.getDate() + " de " + meses[hoy.getMonth()]);
+			*/
+			 /*
+			 //Otra forma de averiguar
+			var hoy=new Date();
+			var dias=new Date();
+			dias.setTime((hoy.getTime() + (1000*60*60*24*90)));
+			 console.log(dias);
+			 */
+
+			   /*
+			   function hoy(){
+
+				var dia=new Date();
+				with(dia){
+					document.write("segundos " + getSeconds() );
+
+				}
+		
+			   }
+			   */
+			  //Te muestra en el titulo la hora
+			   function TituloDinamico() {
+                     var miFecha = new Date();
+                     var hor = miFecha.getHours();
+                     var min = miFecha.getMinutes();
+                     var seg = miFecha.getSeconds();
+                     document.title = "Hora actual: " + hor + ":" + min + ":" + seg;
+                     window.status  = "Hora actual: " + hor + ":" + min + ":" + seg;
+                     var miTimer = setTimeout ("TituloDinamico()", 1000);
+					 clearTimeout(miTimer);
+             }
+             TituloDinamico();
+			
+			</script>
+</head>
+<body>
+	<script>
+		/*hoy();*/
+	</script>
+</body>
+</html>

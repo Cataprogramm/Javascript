@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Catalin Mazarache">
+    <title>Evento 1</title>
+<!---
+Cuando pulses en la imagen que se muestre sucesivamente cada imagen haciendo click en la propia imagen
+Cuando se pulse en la imagen que cargue la página de google
+-->
+
+    <script>
+        var num=0;
+        var tabla=new Array("imagen1.jpg","imagen2.jpg","imagen3.jpg","imagen4.jfif");
+            function cambiar_imagen(){
+                if(num==3){
+                    num=0;
+                }else{
+                    num++;
+                }
+                document.images["imagen"].src=tabla[num];
+                
+            }
+         document.images["imagen"].onclick=cambiar_imagen;   
+         
+
+        document.write("Voy a abrir google");
+         function cambio_pagina(){
+            open(location.href="https://www.google.es/");
+        }
+       
+
+    </script>    
+</head>
+<body>
+   <!--- <a href = "#" onclick="cambiar_imagen(0)">Imagen 1</a>
+    <a href = "#" onclick="cambiar_imagen(1)">Imagen 2</a>
+    <a href = "#" onclick="cambiar_imagen(2)">Imagen 3</a>
+    <a href = "#" onclick="cambiar_imagen(3)">Imagen 4</a>
+    <br>-->
+    <img src="imagen1.jpg" name="imagen" onclick="cambiar_imagen()" open="cambio_pagina()">
+
+    <script>
+  
+    </script>   
+</body>
+</html> 

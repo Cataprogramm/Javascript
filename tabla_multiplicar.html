@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<!---Hacer un programa que pida por teclado un número 
+´y muestre con sentencias document.write() 
+la tabla de multiplicar de dicho número--->
+		<meta charset="UTF-8">
+		<meta name="author" content="Catalin Mazarache">
+		<title>FOR</title>
+    <script>
+		var numero= parseInt(prompt("Introduce un número"));
+		var resultado;
+		var comprueba=false;
+		while(comprueba==false){
+		     conf = confirm ("¿Quieres seguir?");
+			 
+				for(i=0;i<=10;i++){
+				resultado=numero*i;
+				document.write(resultado + "<br>");
+				}
+				
+				if(conf==false){
+					comprueba=true;
+				}
+		}
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

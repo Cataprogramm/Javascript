@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!--Hacer un programa que utilice alguna de las propiedades de screen,
+por ejemplo, abrir o redimensionar una ventana para que ocupe 
+la mitad del ancho y alto de la pantalla.--->
+    <meta charset="UTF-8">
+    <meta name="author" content="Catalin Mazarache">
+    <title>Window Screen</title>
+
+    <script>
+        function abrir(){
+           
+           hija=window.open("Hija.html","hija","width=1000 height=800 menubar=yes");
+        }
+        function cerrar(){
+            hija.close();
+        }
+        function tamanio(){
+            hija.resizeTo(screen.width/2,screen.height/2);
+        }
+        var hija;
+        setTimeout("abrir()",2000);
+        setTimeout("tamanio()",4000);
+        setTimeout("cerrar()",6000);
+
+               
+    </script>
+</head>
+<body>
+	<script>
+		
+	</script>
+</body>
+</html>

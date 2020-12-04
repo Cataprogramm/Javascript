@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!---Desde la ventana padre abrir una ventana hija,a los tres segundos de cargarse tiene que darle el foco(Usar el open,blur)
+ +3 segundos Cargo hija.html
+ +2 segundos Redimensionar a 400x300 px-
+ +2 segundos Mover al pixel 200x100
+ +2 segundos Cerrar hija.html-->
+    <meta charset="UTF-8">
+    <meta name="author" content="Catalin Mazarache">
+    <title>Window Padre</title>
+
+    <script>
+        //var ventana=window.open("Hija.html","hija");
+
+        
+        function ventana_hija(link){
+       window.open(link,"hija","width=120,height=300,scrollbars=yes menubar=yes");
+        }
+
+       /*       var contador=0;
+                var tiempo;
+
+                function crono(){
+                    document.title=contador;
+                    contador++;
+                    if(contador==3){
+                        clearInterval(tiempo);
+                    }
+                }
+                tiempo=setInterval("crono()",1000);
+               */
+
+
+        
+
+        function redimensionar_ventana(){
+                    setTimeout(function(){
+                        alert("Pulsa para redimensionar la ventana a 400x300px");
+                        window.resizeTo(400,300); 
+                    },2000);
+        }
+        alert(redimensionar_ventana());        
+         
+        function mover_ventana(){
+                    setTimeout(function(){
+                        alert("Pulsa para mover la ventana");
+                        window.moveTo(200, 100);
+                    },2000);
+        }
+        alert(mover_ventana()); 
+      
+
+
+         ventana_hija("http://127.0.0.1:5500/Hija.html");
+               
+    </script>
+</head>
+<body>
+	<script>
+		
+	</script>
+</body>
+</html>
+

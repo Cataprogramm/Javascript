@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!---Uso del focus-->
+    <meta charset="UTF-8">
+    <meta name="author" content="Catalin Mazarache">
+    <title>Window focus</title>
+
+    <script>
+      var miVentana;
+
+      miVentana=window.open("pagina_2.html","ventana1","height=200,width=700");
+
+      alert("Pulsa para devolver el foco a la ventana padre");
+      miVentana.blur();
+       
+
+      alert("Pulsa para devolver el foco a la ventana hija");
+      miVentana.focus();         
+    </script>
+</head>
+<body>
+	<script>
+		
+	</script>
+</body>
+</html>

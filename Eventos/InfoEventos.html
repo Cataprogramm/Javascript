@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Catalin Mazarache">
+    <title>Control de eventos</title>
+<!---
+A un click que información tiene un evento,nombre de la propiedad y el valor de todas las propiedades del evento
+Debajo de la imagen un botón genérico que ponga en el texto cambiar imagen y que al hacer click cambie la imagen
+-->
+
+    <script>
+      var num=0;
+      
+        var tabla=new Array("imagen1.jpg","imagen2.jpg","imagen3.jpg","imagen4.jfif");
+            function cambiar_imagen(evento){
+                if(num==3){
+                    num=0;
+                }else{
+                    num++;
+                }
+                document.images["imagen"].src=tabla[num];
+                
+                for(var propiedad in evento){
+                document.write(propiedad + ".-" + evento[propiedad] + "<br>");
+            }
+
+            }
+            
+         document.images["imagen"].onclick=cambiar_imagen;   
+         
+
+        document.write("Voy a abrir google");
+         function cambio_pagina(){
+            open(location.href="https://www.google.es/");
+        }
+
+    </script>    
+</head>
+<body>
+
+
+
+    <img src="imagen1.jpg" name="imagen" onclick="cambiar_imagen()" width="500" height="500" open="cambio_pagina()">
+    <button id="boton">Cambia imagen</button>
+    <script>
+        
+        document.getElementById("boton").addEventListener("click",cambiar_imagen);//puedes poner un alert("1")
+
+    </script>   
+</body>
+</html> 

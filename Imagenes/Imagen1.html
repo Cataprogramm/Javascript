@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Catalin Mazarache">
+    <title>Imagen 1</title>
+<!---
+Cuando pulses que se muestre sucesivamente cada imagen haciendo click en la propia imagen
+
+-->
+
+
+    <script>
+        
+        function cambiar(){
+            for(var i=0;i<cambiar.arguments.length;i++){
+                img[i] = new Image();
+                img[i].src=cambiar.arguments[i];
+            }
+        }
+        function foto(i){
+            document.images["primera_imagen"].src=img[i].src;
+        }
+        var img=new Array();
+
+        cambiar("imagen1.jpg","imagen2.jpg","imagen3.jpg","imagen4.jpg");
+
+        function cambiar_tamanio(){
+            if(document.images){
+                document.images.logo.width=200;
+                document.images.logo.height=200;
+            }else{
+                logo=document.getElementById("logo");
+                logo.width=200;
+                logo.height=200;
+            }
+        }
+
+
+    </script>    
+</head>
+<body>
+    <a href = "#" onclick="foto(0)">Imagen 1</a>
+    <a href = "#" onclick="foto(1)">Imagen 2</a>
+    <a href = "#" onclick="foto(2)">Imagen 3</a>
+    <a href = "#" onclick="foto(3)">Imagen 4</a>
+    <br>
+    <img src="imagen1.jpg" name="primera_imagen">
+    <script>
+  
+    </script>   
+</body>
+</html> 

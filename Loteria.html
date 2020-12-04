@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!--Programa que nos pida el número de papeletas y nos muestre un número aleatorio con la papeleta premiada,incluido 
+el 0 y el número introducido-->
+        <meta charset="UTF-8">
+        <meta name="author" content="Catalin Mazarache">
+        <title>Lotería</title>
+
+    <script>
+        var ultimo=0;
+        var premio=0;
+
+        var cero=0;
+        var mil=0;
+        var quinientos=0;
+
+        for(var i=0;i<1000;i++){
+            premio=Math.floor((Math.round() * 1001));
+            if (premio=0) cero++;
+            if (premio=500) quinientos++;
+            if(premio=1000) mil++;
+        }
+        document.write(cero + "<br>");
+     
+
+        /*
+        ultimo=parseInt(prompt("Introduce un número",0));
+        premio=Math.floor((Math.random() * (ultimo+1)));
+
+        alert(premio);  
+        */      
+        
+        /*
+        var tiempo=setInterval("valor()",100);
+        function valor(){
+            grados++;
+            opaco=Math.sin(grados/60);
+        }
+        */
+        /*
+        var radio=6;
+        var longitud=2*radio*Math.PI;
+        longitud=2*radio*Math.PI;
+        alert(longitud);
+        */
+
+    </script>
+</head>
+<body>
+	<script>
+		
+	</script>
+</body>
+</html>

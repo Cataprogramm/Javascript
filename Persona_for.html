@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!---Crear una clase Persona con las propiedades nombre y edad, cuyo metodo comprueba si la edad es mayor de 20, si es asi le resta 10
+     y a continuacion. Se crea el objeto con su nombre y edad. Una vez envejecido con el alert
+     mostrar el nombre y la edad. Con el alert mostrar los nombres de  las propiedades ---->
+		<meta charset="UTF-8">
+		<meta name="author" content="Catalin Mazarache">
+		<title>FOR</title>
+			<script>
+            //De esta forma se define una clase
+			 function Persona(txtNombre,nEdad){//parametros 
+				this.nombre=txtNombre;//Esta propiedad con el this hace referencia a la funcion Persona
+				this.edad=nEdad;//Otra forma sería poner: nombredelaFuncion.propiedad; Persona.edad=nEdad;
+                this.envejecer=fnEnvejecer;
+			
+             }
+            
+             function fnEnvejecer(){
+                   //if(this.edad>20){ this.edad=this.edad-10;}
+                     with(this){
+                        if(edad>20){
+                            edad-=10; 
+                        }  
+                    }     
+                }
+                var mi_nombre = prompt("Introduce un nombre","Catalin");
+			    var mi_edad = parseInt(prompt("Introduce una edad",27));
+                
+                var mi_persona=new Persona("Catalin",21);
+                mi_persona.edad=27;//De esta forma cambio la edad
+
+                mi_persona.envejecer();
+
+                /*for(var propiedad in mi_persona){
+                    alert("Nombre de la propiedad: " + propiedad + " y su contenido es.- " + mi_persona[propiedad]);
+                    //indicando el nombre del objeto junto al nombre de la propiedad me saca el valor de mi variable
+                }*/
+                for(var propiedad in window.document){
+                    document.write("Nombre de la propiedad: " + propiedad + " y su contenido es.- " + document[propiedad] + "<br>");
+                    //indicando el nombre del objeto junto al nombre de la propiedad me saca el valor de mi variable
+                }
+
+
+			</script>
+</head>
+<body>
+
+</body>
+</html>

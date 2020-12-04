@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Catalin Mazarache">
+    <title></title>
+<!--
+Programa que pregunte el nombre,valor y el tiempo en segundos para que dure la cookie.Si quieres más consultas
+que te pida nuevos datos 
+-->
+
+    <script>
+        //Establecemos un tiempo y le sumamos un número específico de milisegundos
+        var nombre;
+        var valor;
+        var mi_fecha;
+        var confirmacion;
+        var consulta;
+        do{
+            nombre=prompt("Introduce un nombre","nombre");
+            valor=prompt("Introduce un valor","Pepe");
+            mi_fecha=parseInt(prompt("Introduce unos segundos",10));
+            consulta=prompt("¿Quieres más consultas?","si");
+
+        }while(confirmacion==true);
+
+        var fecha=new Date();
+        fecha.setTime(fecha.getTime() + 1000 * mi_fecha );
+        
+
+
+        function asignarCookie(nombre,valor,fecha){
+            document.cookie=nombre + "=" + escape(valor) + 
+            ((fecha == undefined) ? "" : ("; expires=" + fecha.toUTCString())); 
+        }
+
+        asignarCookie("nombre","Pepe",fecha);
+        
+         
+        function leerCookie(nombre){
+
+        if(document.cookie.length == 0){
+            return null;
+        }
+        var sep1=new RegExp("; ","g");
+     
+        var listaCookies=document.cookie.split(sep1);
+        for(var j=0;j<listaCookies.length;j++){
+            var sep2=new RegExp("=","g");
+            var cookie=listaCookies[j].split(sep2);
+           
+            if(cookie[0] == nombre){
+                return (cookie[1]);
+            }
+        }
+                return null;
+            
+      
+        }
+    </script>    
+</head>
+<body>
+    <script>
+  
+    </script>   
+</body>
+</html>

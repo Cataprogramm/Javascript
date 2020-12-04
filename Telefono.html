@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!--Telefono con 91|93 y con 6 números-->
+    <meta charset="UTF-8">
+    <meta name="author" content="Catalin Mazarache">
+    <title>Telefono</title>
+   
+        <script>
+        var cad = prompt("Escribe un telefono");
+
+        function validar (cadena){
+            var expReg2 = new RegExp("^(91)|(93)[0-9]{5,6}","g");
+            var expReg = /^(91)|(93)[0-9]{5,6}$/g;//de esta forma,no hay que escribir las comillas
+            if(expReg.test(cadena)){
+                return "Bien";
+            }else{
+                return "Mal";
+            }
+        }
+
+        alert(validar(cad));
+
+</script>
+</head>
+<body>
+	<script>
+		
+	</script>
+</body>
+</html>

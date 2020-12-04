@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!---El array llamado tabla cuyos elementos del 0 al adelante,cada elemento contiene un objeto de la clase Persona.
+Ordenar los objetos por la edad en orden ascendente--->
+		<meta charset="UTF-8">
+		<meta name="author" content="Catalin Mazarache">
+		<title>Persona_ordenada</title>
+			<script>
+            //De esta forma se define una clase
+			 function Persona(txtNombre,nEdad){//parametros 
+				this.nombre=txtNombre;//Esta propiedad con el this hace referencia a la funcion Persona
+				this.edad=nEdad;//Otra forma sería poner: nombredelaFuncion.propiedad; Persona.edad=nEdad;
+             
+             }
+               var tabla=new Array();
+                tabla.sort(function(a,b){return a.edad-b.edad});//a y b son dos objetos, los ordena de forma ascendente
+                //tabla es un objeto de la clase Array
+
+
+                var mis_alumnos=new Array();
+                for (var i=0;;){}
+                    
+                
+                mis_alumnos[i]=new Alumno;
+                mis_alumnos.sort(function(a,b){return a.nombre-b.nombre});
+			</script>
+</head>
+<body>
+
+</body>
+</html>

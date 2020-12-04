@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!---Crear una clase Persona con las propiedades nombre y edad, cuyo metodo comprueba si la edad es mayor de 20, si es asi le resta 10
+     y a continuacion. Se crea el objeto con su nombre y edad. Una vez envejecido con el alert
+     mostrar el nombre y la edad.
+     Creamos el objeto vacío, las instrucciones rellenan las propiedades. El metodo envejecer() tiene que ser comprobado dentro del programa---->
+		<meta charset="UTF-8">
+		<meta name="author" content="Catalin Mazarache">
+		<title>Objeto Persona2</title>
+			<script>
+            //De esta forma se define una clase
+			 function Persona(txtNombre,nEdad){//parametros 
+				this.nombre=txtNombre;//Esta propiedad con el this hace referencia a la funcion Persona
+				this.edad=nEdad;//Otra forma sería poner: nombredelaFuncion.propiedad; Persona.edad=nEdad;
+                this.envejecer=fnEnvejecer;
+			
+             }
+            
+             function fnEnvejecer(){
+                   //if(this.edad>20){ this.edad=this.edad-10;}
+                     with(this){
+                        if(edad>20){
+                            edad-=10; 
+                        }  
+                    }     
+                }
+                
+                document.title="Otra Persona";//Podemos cambiar el título
+                
+                var mi_persona=new Persona();
+
+                mi_persona.nombre=prompt("Introduce un nombre","Catalin");
+                mi_persona.edad=parseInt(prompt("Introduce una edad",27));
+
+                if(mi_persona.edad>20) {
+                    mi_persona.envejecer();
+                }
+                 
+
+                alert(mi_persona.nombre);
+                alert(mi_persona.edad);
+
+			</script>
+</head>
+<body>
+
+</body>
+</html>

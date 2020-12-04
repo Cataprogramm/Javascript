@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Catalin Mazarache">
+    <title>Ejemplo de cookie</title>
+<!--
+cadena="nombre=Pepe,edad=18,pueblo=Elsuyo,provincia=Cuenca";
+nombre.- Pepe
+edad.- 18
+Que te pida un nombre de cookie y que te saque el valor, y si pides una cookie que no existe te muestra
+no existe 
+-->
+
+    <script>
+           
+        function leerCookie(nombre){
+
+        if(cadena.length == 0){
+            return null;
+        }
+        var sep1=new RegExp("; ","g");
+     
+        var listaCookies=cadena.split(sep1);
+        for(var j=0;j<listaCookies.length;j++){
+            var sep2=new RegExp("=","g");
+            var cookie=listaCookies[j].split(sep2);
+           
+            if(cookie[0] == nombre){
+                return (cookie[1]);
+            }
+        }
+                return null;
+            
+      
+        }
+        
+
+        var cadena="nombre=Pepe; edad=18; pueblo=Elsuyo; provincia=Cuenca";
+        
+        var expresion=new RegExp("[;]","g");
+
+        var total=cadena.split(expresion);
+
+        for (var i = 0; i < total.length; i++) {
+            
+            document.write(total[i] +  "<br>");
+        }
+
+        
+        var pedir=prompt("Introduce una cookie","nombre");
+        var valor=leerCookie(pedir);
+
+        
+        if(valor == null){
+            alert("No existe");
+        }else{
+            alert(valor);
+        }
+
+    </script>    
+
+</head>
+<body>
+    <script>
+    </script>   
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!---A los tres segundos de cargarse tiene que darle el foco-->
+    <meta charset="UTF-8">
+    <meta name="author" content="Catalin Mazarache">
+    <title>Window Hija</title>
+
+    <script>
+     document.write("Este es la ventana hija");
+     
+    //cerrar el documento Hija.html después de 2 segundos
+     function cerrar_ventana(){
+               setTimeout(function(){
+                   window.close();
+               },2000);
+           }     
+    window.onload=cerrar_ventana();
+    </script>
+</head>
+<body>
+	<script>
+		
+	</script>
+</body>
+</html>

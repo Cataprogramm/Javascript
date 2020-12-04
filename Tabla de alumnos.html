@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!---Hacer un programa que permita introducir los datos de tantos alumnos como se desee. Cuando no se desee
+introducir más datos se mostrará un listado ordenado ascendentemente por nombre con el nombre y nota media
+de cada alumno y otro listado similar pero ordenado descendentemente por nota media.--->
+		<meta charset="UTF-8">
+		<meta name="author" content="Catalin Mazarache">
+		<title>Tabla de alumnos</title>
+			<script>
+          //De esta forma se define una clase
+            function Persona(txtNombre,nEdad){//parametros 
+            this.nombre=txtNombre;//Esta propiedad con el this hace referencia a la funcion Persona
+            this.edad=nEdad;//Otra forma sería poner: nombredelaFuncion.propiedad; Persona.edad=nEdad;
+
+            }
+            function Alumno(mi_persona,nDWES,nDWEC){
+            this.persona=mi_persona;
+            this.nota_dwes=nDWES;
+            this.nota_dwec=nDWEC;
+            this.media=fnMedia;
+            }
+
+            function fnMedia(){
+            with(this){
+                var nota=(nota_dwes+nota_dwec)/2;
+                return nota;
+            }
+            }
+
+
+
+            do{
+            var mi_nombre=prompt("Introduce un nombre");
+            var mi_edad= parseInt(prompt("Introduce una edad"));
+            var mi_persona=new Persona(mi_nombre,mi_edad);
+            var mi_notaDWES=parseInt(prompt("Introduce una nota de DWES"));
+            var mi_notaDWEC=parseInt(prompt("Introduce una nota de DWEC"));
+
+            var mi_alumno=new Alumno(mi_persona,mi_notaDWES,mi_notaDWEC);
+
+            mi_media=mi_alumno.media();
+
+            alert("La media es " + mi_media);
+
+
+
+            }while(conf=confirm("¿Quieres introducir más alumnos?"));
+
+            function orden_ascendente(){
+                mi_alumno.sort(function(a,b){
+                var x=a.nombre.toLowerCase();
+                var y=b.nombre.toLowerCase();
+                if(x<y) {return -1;}
+                if(x>y) {return 1;}
+                return a.nombre-b.nombre});
+            
+             }
+
+            function orden_descendente(){
+                mi_alumno.sort(function(a,b){
+                var x=a.nombre.toLowerCase();
+                var y=b.nombre.toLowerCase();
+                if(x<y) {return 1;}
+                if(x>y) {return -1;}
+                return 0});
+            
+            }
+                
+            
+			</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+ 
+

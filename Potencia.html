@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<!---Hacer un programa que utilizando una función recursiva llamada potencia() solicite la base,el exponente y devuelva el resultado---->
+		<meta charset="UTF-8">
+		<meta name="author" content="Catalin Mazarache">
+		<title>Potencia</title>
+			<script>
+				/*
+			var numero1 = parseInt(prompt("Introduce un primer número"));
+			var numero2 = parseInt(prompt("Introduce un segundo número"));
+			 
+				function total(base,exponente){
+					var producto= base ** exponente;
+					return producto;
+					
+				}
+				var potencia=total(numero1,numero2);
+				alert(potencia);
+	*/
+			var numero1 = parseInt(prompt("Introduce un primer número"));
+			var numero2 = parseInt(prompt("Introduce un segundo número"));
+			
+			function potencia(base,exponente){
+				if(exponente===0) return (1);
+				//else if(exponente==1) return (base);
+				else return (base * potencia(base, exponente-1));
+			}
+			var total=potencia(numero1,numero2);
+			alert(total);
+		
+			</script>
+</head>
+<body>
+	<p>Potencia</p>
+
+</body>
+</html>

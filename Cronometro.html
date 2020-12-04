@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!--Crear un programa donde en el titulo aparezca un cronometro indicando el tiempo que transcurre y con un alert, al aceptar que se pare-->
+		<meta charset="UTF-8">
+		<meta name="author" content="Catalin Mazarache">
+		<title>Cronometro</title>
+			<script>
+               /*
+               var contador=0;
+                function mostrar(){
+                    document.title=contador;
+                    contador++;
+                }
+                var tiempo=setInterval("mostrar()",1000);
+                clearInterval(tiempo);
+                alert("Pulse para parar el cronometro");
+                */
+                
+
+                /*
+                var t_inicial=new Date();
+                function mostrar(){
+                    var t_ahora=new Date();
+                    var milis=t_ahora.getTime() - t_inicial-getTime();
+                    var seg=Math.round(milis/1000);
+                    document.title=seg;
+
+                }
+                */
+
+                //Cronometro que tiene que sacar los segundos hasta el 30 y cuando llegue tiene que parar
+               /*
+                var contador=0;
+                var tiempo;
+
+               function crono(){
+                   document.title=contador;
+                   contador++;
+                   if(contador==30){
+                       clearInterval(tiempo);
+                   }
+               }
+               tiempo=setInterval("crono()",1000);
+               */
+
+               
+               //Otra forma para hacer lo de los 30 segundos 
+               var fecha_inicial=new Date();
+               var fecha=new Date();
+               var tiempo;
+               var contador=0;
+               function crono(){
+                   fecha=new Date();
+                   contador=Math.round((fecha.getTime()-fecha_inicial.getTime())/1000);
+                   document.title=contador;
+                   if(contador>29){
+                       clearInterval(tiempo);
+                   }
+               }
+               tiempo=setInterval("crono()",1000);
+               
+          
+                
+                /*
+                function TiempoPasado() {
+                     var FechaAct = new Date();
+                     var tiempo = Math.round((FechaAct.getTime() - msIni) / 1000);
+                     document.title = "Segundos transcurridos: " + tiempo;
+                }
+                var FechaIni = new Date();
+                var msIni = FechaIni.getTime();
+                TiempoPasado();
+                // Actualiza el título con una llamada
+                var miTimer = setInterval ("TiempoPasado()", 1000);
+                */
+                
+
+     
+			
+			</script>
+</head>
+<body>
+	<script>
+		
+	</script>
+</body>
+</html>
+
+

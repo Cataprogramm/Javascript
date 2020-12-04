@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!--Crear un array con siete provincias, y que te pida por teclado el numero de provincias.
+ Con un alert mostrar la provincia que está en esa posicion---->
+		<meta charset="UTF-8">
+		<meta name="author" content="Catalin Mazarache">
+		<title>Array</title>
+			<script>
+                var provincias=new Array();
+                provincias[0]="Madrid";
+                provincias[1]="Leon";
+                provincias[2]="Cuenca";
+                provincias[3]="Toledo";
+                provincias[4]="Sevilla";
+                provincias[5]="Bilbao";
+                provincias[6]="Granada";
+                var i=0;
+                
+
+            
+                i=parseInt(prompt("Introduce el numero de provincia"));
+                while(i<0 || i>=provincias.length){
+                    i=parseInt(prompt("Se ha producido un error"));
+                }
+                alert(provincias[i]);
+
+
+                /*do{
+                    i=parseInt(prompt("Introduce el numero de provincia"));
+                }while(i<0 || i>6);
+                alert(provincias[i]);
+                */
+                //provincias es un objeto de Array
+                
+               
+
+               
+
+			</script>
+</head>
+<body>
+
+</body>
+</html>
