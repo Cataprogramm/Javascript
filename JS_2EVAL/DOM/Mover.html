@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+			<title>Mover párrafo</title>
+			<meta charset="UTF-8">
+			<meta name="description" content="Mover un párrafo al centro o a la derecha">
+			<meta name="author" content="Catalin Mazarache">
+			<!---
+			Mover un párrafo a la derecha y al centro
+			-->
+			<style>
+			.derecha{
+				text-align: right;
+			}
+			.centro{
+				text-align: center;
+			}
+			</style>
+			
+			<script>
+			
+			document.addEventListener("readystatechange",cargaEventos,false);
+				
+			function cargaEventos(evento){
+				if(document.readyState == "interactive"){
+				var boton1= document.getElementById("boton")
+				boton1.addEventListener("click", derecha, true);
+				
+				var boton2=document.getElementById("boton2")
+				boton2.addEventListener("click", centro, true);	
+				
+				var boton3=document.getElementById("boton2")
+				boton3.addEventListener("click", mover, true);	
+				
+				var parrafo=document.getElementsByTagName("p")[0]
+				}
+			}
+			function derecha(){
+				//document.getElementsByTagName("p")[0].setAttribute("class","derecha");
+				parrafo.setAttribute("align","right");
+				//var mi_atributo=document.createAttribute("id");
+				//mi_atributo.setAttribute("id","right");
+				
+				
+			}
+			function centro(){
+				parrafo.setAttribute("align","center");
+				
+			}
+			function mover(){
+				if(parrafo.getAttribute("align") == null){
+					parrafo.setAttribute("align","right");
+					
+				}else if(parrafo.getAttribute("align") == "right"){
+					parrafo.setAttribute("align","center");
+				}else if(parrafo.getAttribute("align") == "center"){
+					parrafo.setAttribute("align","right");
+				}
+				//parrafo.setAttribute("align","right");
+				//parrafo.setAttribute("align","center");
+			}
+			
+			
+			
+				
+			</script>
+
+			
+	<body>
+		<p id="parrafo">Mi texto se va a mover</p>
+		<button name="boton" id="boton" onclick="derecha()">Derecha</button>
+		<button name="boton2" id="boton2" onclick="centro()">Centro</button>
+		<button name="boton3" id="boton3" onclick="mover()">Mover</button>
+		
+	
+	</body>
+	</head>
+</html>

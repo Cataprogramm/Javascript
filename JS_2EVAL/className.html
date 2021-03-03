@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+			<title> ClassName</title>
+			<meta charset="UTF-8">
+			<meta name="description" content="ClassName">
+			<meta name="author" content="">
+			<!---
+			Dos clases fondo rojo y verde, entre los dos parrafos dos salto de línea
+			Al pinchar boton verde se ponga de color verde y al pinchar en el otro
+			se ponga en rojo
+			-->
+			<style>
+			.normal{
+				background-color:white;
+			}
+			.rojo{
+				background-color:red;
+			}
+			.verde{
+				background-color:green;
+			}
+			</style>
+			
+			<script>
+			document.addEventListener("readystatechange",cargaEventos,false);
+				
+			function cargaEventos(evento){
+				if(document.readyState == "interactive"){
+					document.getElementById("boton").addEventListener("click", rojo, true);
+					document.getElementById("boton2").addEventListener("click", verde, true);
+				}
+			}
+			function rojo(){
+			alert("rojo");
+				document.getElementsByTagName("p")[0].className="rojo";
+				var p2=document.getElementsByTagName("p")[1];
+				p2.className="rojo";
+				console.log("rojo");
+			}
+			
+			function verde(){
+			alert("verde");
+				document.getElementsByTagName("p")[0].className="verde";
+				var p2=document.getElementsByTagName("p")[1];
+				p2.className="verde";
+				console.log("verde");
+			}
+				/*
+			function Click(color){
+				if (color.className=="rojo") {
+				color.className="normal";
+				} else {
+				color.className="rojo";
+				}
+			} 
+			function Fuera(color){
+				if(color.className != "rojo"){
+					color.className="verde";
+				}
+			}*/
+				/*
+				
+				*/
+				
+			
+			</script>
+	<body>
+		<h3>CAMBIO DE PARRAFO</h3>
+		<p>PRIMER PARRAFO</p>
+		<br><br>
+		<p>SEGUNDO PARRAFO</p>
+		<button name="boton" id="boton" class="rojo">Rojo</button>
+		<button name="boton2" id="boton2" class="verde">Verde</button>
+
+	</body>
+	</head>
+</html>

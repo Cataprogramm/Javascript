@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+			<title> FormularioTypeRadio</title>
+			<meta charset="UTF-8">
+			<meta name="description" content="Cliente">
+			<meta name="author" content="">
+			
+			<script>
+			document.addEventListener("readystatechange",cargaEventos,false);
+
+			function cargaEventos(evento){	
+				if(document.readyState == "interactive"){
+					document.getElementById("boton").addEventListener("click",cambioParrafo,true);
+				}
+			}
+			function cambioParrafo(){
+				
+				var parrafo1=document.getElementsByTagName("p")[0].innerHTML;
+				var parrafo2=document.getElementsByTagName("p")[1].innerHTML;
+				
+				document.getElementsByTagName("p")[0].innerHTML=parrafo2;
+				document.getElementsByTagName("p")[1].innerHTML=parrafo1;
+				
+				
+			}
+			</script>
+	<body>
+		<h3>CAMBIO DE PARRAFO</h3>
+		<p>PRIMER PARRAFO</p>
+		<p>SEGUNDO PARRAFO</p>
+		<button name="boton" id="boton">Cambio parrafo</button>
+
+	</body>
+	</head>
+</html>

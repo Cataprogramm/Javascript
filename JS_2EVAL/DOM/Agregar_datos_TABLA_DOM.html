@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+   <meta charset="utf-8">
+   <title>Examen parte 2</title>
+  <style>
+        table {border-collapse: collapse;}
+        table, th, td {border: 2px solid black;}
+        td {padding: 10px;}
+  </style>    
+  
+
+  
+
+ </head>
+ <body>
+    <h1>Tabla con datos</h1>
+
+    <form id="formulario">
+        <div class ="formField">
+            Tipo de transacción
+            <input type="radio" id="ingreso" name="transacción" value="ingreso">
+            <label for="ingreso">Ingreso</label>
+            <input type="radio" id="reintegro" name="transacción" value="reintegro">
+            <label for="ingreso">Reintegro</label>
+        </div>
+        <div class="formField">
+            <label for="descripcion">Descripción</label>
+            <input id="descripcion" name="descripcion">
+        </div>
+        <div class="formField">
+            <label for="cantidad">Fecha</label>
+            <input id="cantidad" name="cantidad" type="number">
+        </div>    
+        <div class="formField">
+            <label for="categoria">Categoría</label>
+            <input id="categoria" name="categoria">
+        </div>  
+        <div class="formField">
+            <button id="botonDeEnvio">Añadir</button>
+        </div>  
+    </form>
+
+    <div class="tableFormat">
+        <table id="miTabla">
+            <tr>
+               <th>
+                Descripción
+               </th> 
+
+               <th>
+                Fecha
+               </th>
+
+               <th>
+                Categoría
+               </th>
+
+               <th>
+                Añadir
+               </th>
+
+            </tr>   
+            <tr>
+                <td>1234</td>
+                <td>27-02-2021</td>
+                <td>Ingreso</td>
+                <td>3000</td>
+            </tr>     
+        </table>    
+    
+    
+    
+    </div>
+
+
+    <script>
+        const form = document.getElementById("formulario");
+  
+          form.addEventListener("submit", function(event){
+          event.preventDefault();
+  
+          let transactionFormData= new FormData(form);
+  
+          insertRowInTransactionTable(transactionFormData)
+       
+      })
+  
+      function insertRowInTransactionTable(transactionFormData){
+          let transactionTableRef=document.getElementById("miTabla");
+  
+          let newTransactionRowRef=transactionTableRef.insertRow(-1);
+  
+          let newTypeCellRef=newTransactionRowRef.insertCell(0);
+          newTypeCellRef.textContent = transactionFormData.get("transacción");
+  
+          newTypeCellRef=newTransactionRowRef.insertCell(1);
+          newTypeCellRef.textContent = transactionFormData.get("descripcion");
+  
+          newTypeCellRef=newTransactionRowRef.insertCell(2);
+          newTypeCellRef.textContent = transactionFormData.get("cantidad");
+  
+          newTypeCellRef=newTransactionRowRef.insertCell(3);
+          newTypeCellRef.textContent = transactionFormData.get("categoria");
+      }
+  
+  
+    </script>    
+</body>
+</html>

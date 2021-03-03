@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Catalin Mazarache">
+    <title>Rango de edad</title>
+    <!--
+        Hacer una página web que contenga un formulario con los siguientes elementos:
+
+        Una caja de texto para introducir el nombre.
+        Un "input type radio" para seleccionar la edad: menor de 18, entre 18 y 60 y mayor de 60.
+        Una imagen que detecta el click y envía los datos a una web en php.
+        Los datos se enviarán al servidor web al pulsar en la imagen pero solamente si se ha introducido algo en el nombre y además se ha seleccionado uno de los rangos de edad.
+
+        El servidor web devolverá una página que muestre los nombres de las variables y los datos recibidos.
+
+        Al pulsar en la imagen, además de validar y enviar se guardarán en cookies que perdurarán 2 minutos los valores del formulario.
+
+        Al cargar la página, si existen las cookies, se asignarán los datos a los elementos correspondientes del formulario (el nombre y el botón seleccionado).
+    -->
+    <script>
+        function validar(miForm) {
+            for (var i = 0; i < miForm.edad.length; i++) {
+                if (miForm.pago[i].checked) {
+                    return true;
+                }
+
+            }
+            alert("Elegir una de las opciones de edad");
+            return false;
+        }
+        function setCookie(cname, cvalue, cminutes) {
+            var tiempo = new Date();
+            tiempo.setTime(tiempo.getTime() + (cminutes * 60 * 1000));
+            var expires = "expires=" + tiempo.toUTCString();
+            document.cookie = cname + "=" + cvalue + "; " + expires;
+        }
+    </script>
+
+    
+
+
+</head>
+
+<body>
+    <form action="formulario.php" name="formulario" method="GET">
+        <label for="nombre">Nombre: </label>
+        <input type="text" name="nombre" value="Cata" required="required">
+        <br>
+        <label for="edad_menor">Edad<18:</label>
+        <input type="radio" name="edad"  value="0" required="required">
+        <br>
+        <label for="edad_media">Edad: 18-60</label>
+        <input type="radio" name="edad" value="1" required="required">
+        <br>
+        <label for="edad_mayor">Edad>60:</label>
+        <input type="radio" name="edad"  value="2" required="required">
+        <br><br>
+        <input type="image" src="foto1.jpg" alt="submit" width="250" height="250" onclick="validar(this.form)">
+        <br>
+        <input type="submit" value="Enviar">
+    </form>
+
+</body>
+
+</html>

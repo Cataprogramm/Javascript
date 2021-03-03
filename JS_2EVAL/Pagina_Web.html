@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Catalin Mazarache">
+    <title>Lista Dinámica</title>
+    <!--
+       Página web con dos párrafos para que el contenido del párrafo 1 sea el del 2 y al revés
+    -->
+
+</head>
+
+<body>
+		<p> Primer texto </p>
+		
+		<p> Segundo texto</p>
+		
+		<input type="button" value="Cambiar">
+		
+		
+		<script> 
+		/*var parrafos=document.getElementsByTagName("p");
+		var texto=parrafos[0];
+		var mitexto= texto.innerHTML;
+		
+		var parrafo1=document.getElementsByTagName("p")[0];
+		[0].innerHTML=document.getElementsByTagName[1].innerHTML;
+		[1].innerHTML=parrafos;
+		
+		*/
+		
+		var texto1=document.getElementsByTagName("p")[0].innerHTML;
+		document.getElementsByTagName("p")[0].innerHTML= document.getElementsByTagName("p")[1].innerHTML;
+		document.getElementsByTagName("p")[1].innerHTML=texto1;
+		
+				
+		</script>
+</body>
+</html>

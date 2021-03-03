@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Catalin Mazarache">
+    <title>Rango de edad</title>
+    <!--
+        Hacer una página web que contenga un formulario con los siguientes elementos:
+
+        Una caja de texto para introducir el nombre.
+        Un "input type radio" para seleccionar la edad: menor de 18, entre 18 y 60 y mayor de 60.
+        Una imagen que detecta el click y envía los datos a una web en php.
+        Los datos se enviarán al servidor web al pulsar en la imagen pero solamente si se ha introducido algo en el nombre y además se ha seleccionado uno de los rangos de edad.
+
+        El servidor web devolverá una página que muestre los nombres de las variables y los datos recibidos.
+
+        Al pulsar en la imagen, además de validar y enviar se guardarán en cookies que perdurarán 2 minutos los valores del formulario.
+
+        Al cargar la página, si existen las cookies, se asignarán los datos a los elementos correspondientes del formulario (el nombre y el botón seleccionado).
+    -->
+    <script>
+      function elegirProvincia(){
+		var texto; 
+		texto = "El numero de opciones del select: " + document.formulario.listaProvincias.length; 
+		var indice = document.formulario.listaProvincias.selectedIndex; 
+		texto += " numIndice de la opcion escogida: " + indice; 
+		var valor = document.formulario.listaProvincias.options[indice].value; 
+		texto += " numValor de la opcion escogida: " + valor; 
+		var textoEscogido = document.formulario.listaProvincias.options[indice].text; 
+		texto += " nTexto de la opcion escogida: " + textoEscogido; 
+		alert(texto); 
+		}
+		
+		function opciones(){
+			indice=document.getElementById("listaProvincias").selectedIndex;
+			if(indice == null || indice == 0){
+				return false;
+			}
+		}
+	  function asignarCookie(nombre,valor,caducidad,ruta,dominio,seguridad){
+		document.cookie=nombre + "=" + escape(valor) + 
+		((caducidad == undefined) ? "" : ("; expira= " + caducidad.toGMTString())) + 
+		((ruta==undefined ? "" : ("; ruta= " + ruta)) +
+		((dominio==undefined) ? "" : ("; dominio= " + dominio)) + 
+		((seguridad==true) ? "; secure" : "")
+ 	  }
+	  
+    </script>
+
+    
+
+
+</head>
+
+<body>
+	<form name="formulario" action="<?php $_SERVER['PHP_SELF']?>">
+		<select name="listaProvincias" onChange="(this)">
+			<option value="0">Madrid</option>
+			<option value="1">Sevilla</option>
+			<option value="2">Barcelona</option>
+			<option value="3">Valencia</option>
+			<option value="4">Cuenca</option>
+			<option value="5">Cádiz</option>
+			<option value="6">Bilbao</option>
+		</select>
+		
+		A <input type="checkbox" id="checkbox1">
+		B <input type="checkbox" id="checkbox2">
+		C <input type="checkbox" id="checkbox3">
+		
+	<input type="button" value="Provincias escogidas" onclick="elegirProvincia()">	
+	
+	
+	</form>
+</body>
+
+</html>

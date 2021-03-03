@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+			<title>Tabla con DOM</title>
+			<meta charset="UTF-8">
+			<meta name="description" content="Tabla con Listado de Movimientos">
+			<meta name="author" content="Catalin Mazarache">
+			<!---
+			Eliminar en un párrafo un texto
+			-->
+			<style>
+			table,tr,td,th{
+				background-color: ;
+				border: 1px solid black;
+				color:red;
+				text-align: center;
+				
+			}
+			</style>
+			
+			
+			
+			<script>
+			//Guardar datos en un array
+			/*
+			let datos=[];
+			
+			document.querySelectorAll('miTabla').forEach(function(e){
+				let fila={
+				fecha: e.querySelector('.fecha').innerText,
+				description: e.querySelector('.description').innerText,
+				importe: e.querySelector('.importe').innerText,
+				sueldo: e.querySelector('.sueldo').innerText
+				};
+				datos.push(fila);
+			});
+			console.log(datos);
+			*/
+			
+			
+			function genera_tabla() {
+				var tabla=document.getElementById("miTabla").getElementsByTagName("tbody")[0];
+				var row=tabla.insertRow(-1);
+				/*Me genera un espacio para una fila, no introduce los datos
+				var cell1 = row.insertRow(0);
+				var cell2 = row.insertRow(1);
+				var cell3 = row.insertRow(2);
+				var cell4 = row.insertRow(3);
+				*/
+				
+				var cell1 = row.insertCell(0);
+				var cell2 = row.insertCell(1);
+				var cell3 = row.insertCell(2);
+				var cell4 = row.insertCell(3);
+				
+			    cell1.innerHTML = "2021-01-25";
+				cell2.innerHTML = "Extracción";
+				cell3.innerHTML = "200";
+				cell4.innerHTML = "200";
+				
+				
+				
+				/*
+				  var body = document.getElementsByTagName("body")[0];
+
+				 
+				  var tabla   = document.createElement("table");
+				  var tblBody = document.createElement("tbody");
+
+				  // Crea las celdas
+				  for (var i = 0; i < 4; i++) {
+					// Crea las hileras de la tabla
+					var row = document.createElement("tr");
+
+					for (var j = 0; j < 4; j++) {
+					  
+					  
+					  
+					  var celda = document.createElement("td");
+					  var texto=prompt("Introduce un texto");
+					  var textoCelda = document.createTextNode(texto);
+					  celda.appendChild(textoCelda);
+					  hilera.appendChild(celda);
+					  
+					  
+					  
+					  var celda = document.createElement("td");
+					  var textoCelda = document.createTextNode("fila "+i+", columna "+j);
+					  celda.appendChild(textoCelda);
+					  row.appendChild(celda);
+						
+					}
+
+					tblBody.appendChild(row);
+				  }
+				  tabla.appendChild(tblBody);
+				  // guardamos la tabla en un body
+				  body.appendChild(tabla);*/
+			  
+			}
+
+			function borrar(){
+			
+			var tabla=document.getElementById("miTabla").getElementsByTagName("tbody")[0];
+			var row=tabla.deleteRow(-1);
+		
+			
+			}
+						
+			</script>
+			
+	</head>
+	<body>
+	
+	
+	<table id="miTabla">
+		
+		<caption>LISTADO DE MOVIMIENTOS</caption>
+		
+		<thead>
+			<tr>
+				<th>FECHA</th>
+				<th>DESCRIPCIÓN</th>
+				<th>IMPORTE</th>
+				<th>SUELDO</th>								
+			<tr>
+		</thead>
+		
+		<tbody>
+			<tr>
+				<td class="fecha">2021-01-20</td>
+				<td class="description">Ingreso en efectivo</td>
+				<td class="importe">100</td>
+				<td class="sueldo">100</td>
+			</tr>
+			<tr>
+				<td class="fecha">2021-01-21</td>
+				<td class="description">Reintegro en efectivo</td>
+				<td class="importe">50</td>
+				<td class="sueldo">50</td>
+			</tr>
+			<tr>
+				<td class="fecha">2021-01-22</td> 
+				<td class="description">Ingreso un dia antes Banco</td>  
+				<td class="importe">200</td>
+				<td class="sueldo">250</td>
+			</tr>
+			<tr>
+				<td class="fecha">2021-02-23</td>  
+				<td class="description">Recibo Movistar</td>
+				<td class="importe">36,15</td>
+				<td class="sueldo">213,85</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<br><br>
+	<!---<input type="button" value="Crear una tabla" onclick="genera_tabla()">-->
+	<img src="añadir.jpg" name="imagen" onclick="genera_tabla()" width="300" height="300">
+	<br><br>
+	<img src="eliminar.jpeg" name="imagen" onclick="borrar()" width="300" height="300">
+	<!---<button id="boton">Cambiar</button>--->
+	
+	</body>	
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+			<title> FormularioTypeRadio</title>
+			<meta charset="UTF-8">
+			<meta name="description" content="Cliente">
+			<meta name="author" content="Catalin Mazarache">
+			<!---
+			Dos parrafos y probarlo con visibility y display 
+			-->
+			<style>
+			
+			</style>
+			
+			<script>
+				document.addEventListener("readystatechange",cargaEventos,false);
+				
+			function cargaEventos(evento){
+				if(document.readyState == "interactive"){
+					document.getElementById("boton").addEventListener("click", visible, true);
+					document.getElementById("boton2").addEventListener("click", hidden, true);
+					document.getElementById("boton3").addEventListener("click", none, true);
+					document.getElementById("boton4").addEventListener("click", block, true);
+				}
+			}
+			function visible(){
+			alert("visible");
+				document.getElementsByTagName("p")[0].style.visibility="visible";
+				var p2=document.getElementsByTagName("p")[1];
+				p2.className="visible";
+				console.log("visible");
+			}
+			
+			function hidden(){
+			alert("hidden");
+				document.getElementsByTagName("p")[0].style.visibility="hidden";
+				var p2=document.getElementsByTagName("p")[1];
+				p2.className="hidden";
+				console.log("hidden");
+			}
+			function none(){
+			alert("none");
+				document.getElementsByTagName("p")[0].style.display="none";
+				var p2=document.getElementsByTagName("p")[1];
+				p2.className="none";
+				console.log("none");
+			}
+			function block(){
+			alert("block");
+				document.getElementsByTagName("p")[0].style.display="block";
+				var p2=document.getElementsByTagName("p")[1];
+				p2.className="block";
+				console.log("block");
+			}
+			
+			</script>
+	<body>
+		<h3>CAMBIO DE PARRAFO</h3>
+		<p>PRIMER PARRAFO</p>
+		<br><br>
+		<p>SEGUNDO PARRAFO</p>
+		<button name="boton" id="boton">Visible</button>
+		<button name="boton2" id="boton2">Hidden</button>
+		<button name="boton3" id="boton3">None</button>
+		<button name="boton4" id="boton4">Block</button>
+
+	</body>
+	</head>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+   <meta charset="utf-8">
+   <title>Examen parte 2</title>
+  <style>
+        table {border-collapse: collapse;}
+        table, th, td {border: 2px solid black;}
+        td {padding: 10px;}
+  </style>    
+  
+
+  
+
+ </head>
+ <body>
+    <h1>Tabla con datos</h1>
+
+    <form id="formulario">
+        <div class ="form">
+           
+        </div>
+        <div class="form">
+            <label for="cuenta">Nº de cuenta</label>
+            <input id="cuenta" name="cuenta">
+       
+        </div>
+        <br>
+        <div class="form">
+            <label for="inicial">Fecha inicial:</label>
+            <input id="inicial" name="inicial" type="text" value="aaaa-mm-dd">
+           
+        </div>   
+        <br> 
+        <div class="form">
+            <label for="final">Fecha final:</label>
+            <input id="final" name="final" type="text" value="aaaa-mm-dd">
+           
+        </div>  
+        <br>
+        <div class="form">
+            <label for="importe">Importe:</label>
+            <input id="importe" name="importe" type="text" >
+           
+        </div>  
+        <br>
+        Operación:
+        <input type="radio" id="ingreso" name="transacción" value="ingreso">
+        <label for="ingreso">Ingreso</label>
+        <input type="radio" id="reintegro" name="transacción" value="reintegro">
+        <label for="ingreso">Reintegro</label>
+        
+        <div class="form">
+            <button id="botonDeEnvio">Consultar</button>
+        </div>  
+        <br>
+    </form>
+
+    <div class="tableFormat">
+        <table id="miTabla">
+            <tr>
+               <th>
+                Fecha
+               </th> 
+
+               <th>
+                Importe
+               </th>
+
+            </tr>   
+            <tr>
+                <td>27-02-2021</td>
+                <td>3000</td>
+               
+            </tr>     
+        </table>    
+    </div>
+
+    
+    <script>
+        const form = document.getElementById("formulario");
+  
+          form.addEventListener("submit", function(evento){
+          evento.preventDefault();//Evita que se cancele el evento
+  
+          let movimiento= new FormData(form);
+  
+          insertar(movimiento)
+       
+      })
+  
+      function insertar(movimiento){
+          let tabla_movimientos=document.getElementById("miTabla");
+        //Se agrega en la última fila los nuevos datos que introducimos
+          let fila=tabla_movimientos.insertRow(-1);
+  
+          let celda=fila.insertCell(0);
+          celda.textContent = movimiento.get("cuenta");
+  
+          celda=fila.insertCell(1);
+          celda.textContent = movimiento.get("importe");
+  
+      }
+  
+  
+    </script>    

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Json con evento</title>
+    <!----Un input de provincia y otro de edad, al enviar con el submit comprobar cuál era la provincia
+del array-->
+    <script> 
+    var xhttp;
+          document.addEventListener("readystatechange",cargaEventos,false);
+
+          function cargaEventos(evento){
+                if(document.readyState == "interactive"){
+                    document.getElementById("boton").addEventListener("click",opciones,true);
+                }
+          }
+          function opciones(e){
+            e.preventDefault;
+            console.log("hola");
+            var provincia_= document.getElementById("provincia").value;
+          xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            alert(this.responseText);
+            var objeto=JSON.parse(this.responseText);
+            document.getElementById("sitio").innerHTML=objeto.provincia;
+          }
+        }
+      
+        
+     
+         var url="http://localhost/ejercicios/JS_2EVAL/Ajax/json1.php?x="+JSON.stringify(provincia);
+         console.log(url);
+        xhttp.open("GET",url,true);
+        xhttp.send(null);
+    
+      }
+
+    </script>
+
+</head>
+
+<body>
+    <form name="formulario"  method="GET">
+        Provincia: <input type="number" name="provincia" id="provincia" min="0" max="4"> <br><br>
+       
+        <input type="submit" onclick="opciones()" id="boton" value="valor">
+    </form>
+
+    <p id = 'sitio'></p>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax con evento</title>
+    <script>
+        document.addEventListener("readystatechange",cargaEventos,false);
+
+        function cargaEventos(evento){
+            if(document.readyState == "interactive"){
+                documen.getElementById("boton").addEventListener("click",opciones,true);
+            }
+        }
+
+        function opciones() {
+            var xhttp = new XMLHttpRequest();
+            var url="ajax_opciones_post.php";
+            var parametros="opcion=1";
+            //var parametros=document.getElementById('input').value; NO FUNCIONA
+            xhttp.open("POST",url,true);
+
+            xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+            xhttp.onreadystatechange=function(){
+                if(xhttp.readyState == 4 && xhttp.status == 200){
+                    alert(xhttp.responseText);
+                }
+            }
+            //xhttp.send("opcion=1");
+            xhttp.send(parametros);
+
+            /*
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("sitio").innerHTML = this.responseText;
+                }
+            };
+
+            var opcion = document.getElementById('input').value;
+            xhttp.open("GET", "ajax_opciones.php?opcion="+opcion, true);
+          
+            xhttp.send();
+            */
+}
+    </script>
+</head>
+<body>
+
+    <!---<form action="ajax_opciones.php" method="GET">
+    <input type="text" name="opcion" id = 'input'>
+    <button type="submit" onclick="opciones()">Mostrar valor</button>
+    </form>-->
+<form name="formulario" action="" method="POST">
+    <input type="text" name="opcion" id ='input'>
+    <button type="submit" onclick="opciones()" id="boton">Mostrar valor</button>
+</form>
+
+   <div id="mi_div">
+       <h1>El número es: </h1>
+    <!--hola-->
+       <p id = 'sitio'></p>
+       <!--hola2-->
+   </div>
+   
+
+
+
+</body>
+</html>

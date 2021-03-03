@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+			<title>Nodos</title>
+			<meta charset="UTF-8">
+			<meta name="description" content="Inserción de un elemento">
+			<meta name="author" content="Catalin Mazarache">
+			<!---
+			Insertar en un párrafo un texto
+			-->
+			<style>
+			
+			</style>
+			
+			<script>
+			
+			document.addEventListener("readystatechange",cargaEventos,false);
+				
+			function cargaEventos(evento){
+				if(document.readyState == "interactive"){
+				document.getElementById("boton").addEventListener("click", insertar, true);
+						
+					
+				}
+			}
+			function insertar(){
+				var mi_parrafo=document.createElement("p");
+				var mi_texto=document.createTextNode("Agrego un nuevo texto");
+				mi_parrafo.appendChild(mi_texto);
+				var anterior=document.getElementsByTagName("p")[0];
+				document.body.insertBefore(mi_parrafo,anterior);
+			}
+			
+			
+			
+				
+			</script>
+
+			
+	<body>
+		<p></p>
+		<button name="boton" id="boton">Cambiar</button>
+		
+		
+	
+	</body>
+	</head>
+</html>

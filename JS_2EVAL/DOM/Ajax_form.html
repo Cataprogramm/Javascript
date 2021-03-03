@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+    <script>
+        function opciones() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("sitio").innerHTML = this.responseText;
+                }
+            };
+
+            var opcion = document.getElementById('input').value;
+            xhttp.open("GET", "ajax_opciones.php?opcion="+opcion, true);
+          
+            xhttp.send();
+}
+    </script>
+</head>
+<body>
+<div>
+    
+    <!---<form action="ajax_opciones.php" method="GET">
+    <input type="text" name="opcion" id = 'input'>
+    <button type="submit" onclick="opciones()">Mostrar valor</button>
+    </form>-->
+</div>
+<input type="text" name="opcion" id = 'input'>
+<button type="submit" onclick="opciones()">Mostrar valor</button>
+
+   <div id="mi_div">
+    <!--hola-->
+       <p id = 'sitio'></p>
+       <!--hola2-->
+   </div>
+   
+
+
+
+</body>
+</html>

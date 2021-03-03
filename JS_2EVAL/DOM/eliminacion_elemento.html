@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+			<title>Nodos</title>
+			<meta charset="UTF-8">
+			<meta name="description" content="Eliminación de un elemento">
+			<meta name="author" content="Catalin Mazarache">
+			<!---
+			Eliminar en un párrafo un texto
+			-->
+			<style>
+			
+			</style>
+			
+			
+			
+			<script>
+			
+			document.addEventListener("readystatechange",cargaEventos,false);
+				
+			function cargaEventos(evento){
+				if(document.readyState == "interactive"){
+				document.getElementById("boton").addEventListener("click", insertar, true);
+				document.getElementById("boton2").addEventListener("click", eliminar, true);	
+				document.getElementById("boton3").addEventListener("click", modificar, true);
+			
+				}
+			}
+			
+			function insertar(){
+				var mi_parrafo=document.createElement("p");
+				var mi_texto=document.createTextNode("Agrego un nuevo texto");
+				mi_parrafo.appendChild(mi_texto);
+				var anterior=document.getElementsByTagName("p")[0];
+				document.body.insertBefore(mi_parrafo,anterior);
+				
+			}
+			
+			
+			function eliminar(){
+				
+				var parrafo=document.getElementsByTagName("p")[0];
+				
+				document.body.removeChild(parrafo);
+				
+			}
+			
+			function modificar(){
+				var mi_parrafo=document.createElement("p");
+				var mi_texto=document.createTextNode("Cambio");
+				mi_parrafo.appendChild(mi_texto);
+				var anterior=document.body.getElementsByTagName("p")[0];
+				
+				
+				anterior.parentNode.replaceChild(mi_parrafo,anterior);
+			}
+		
+				
+			</script>
+
+			
+	<body>
+		
+		<button name="boton" id="boton">Añadir</button>
+		<button name="boton2" id="boton2">Eliminar</button>
+		<button name="boton3" id="boton3">Modificar</button>
+	
+	</body>
+	</head>
+</html>

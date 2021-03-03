@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+    <title</title>
+    <meta charset = "utf8">
+
+    <script>
+        function dar_alta(){
+            localStorage.setItem("name","Catalin");
+            localStorage.setItem("name1","Juan");
+            localStorage.setItem("name2","Carlos");
+        }
+        //Con clear puedes borrar todos los registros
+        function dar_baja(){
+            for(var i=0;i<localStorage.length;i++){
+                clave= localStorage.key(i);
+                document.write("La clave " + clave + " contiene el valor " + localStorage.removeItem(clave) + "<br>")
+            }
+            //localStorage.removeItem("name2");
+        }
+        
+        function mostrar(){
+            document.getElementById("sitio").innerHTML=localStorage.getItem("name");
+            document.getElementById("sitio1").innerHTML=localStorage.getItem("name1");
+            document.getElementById("sitio2").innerHTML=localStorage.getItem("name2");
+        
+        }
+        function modificar(){
+            if(localStorage.getItem("name","Catalin") == true){
+                localStorage.setItem("name","Pepe");
+            }
+        }
+
+        function mostrar_todas(){
+            for(var i=0;i<localStorage.length;i++){
+                clave= localStorage.key(i);
+                alert("La clave " + clave + " contiene el valor " + localStorage.getItem(clave) + "<br>")
+                
+            }
+
+        }
+        function borrar_registros(){
+            localStorage.clear();
+        }
+
+
+
+    </script>
+
+
+</head>
+
+<body>
+<p id="sitio"></p>
+<p id="sitio1"></p>
+<p id="sitio2"></p>
+<button onclick="dar_alta()">Dar de alta</button>
+<button onclick="dar_baja()">Dar de baja</button>
+<button onclick="mostrar()">Mostrar</button>
+<button onclick="modificar()">Modificar</button>
+<button onclick="mostrar_todas()">Listado</button>
+<button onclick="borrar_registros()">Eliminar todos los registros</button>
+</body>
+</html>
